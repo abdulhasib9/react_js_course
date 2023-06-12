@@ -1,0 +1,25 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+
+.booklist{
+    width: 90vw;
+    max-width: 1170px;
+    margin: 5rem auto;
+    display: grid;
+    gap:2rem;
+}
+.book{
+    width: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width:768px){
+.booklist{
+    grid-template-columns: repeat(3.1fr);
+}
+}
