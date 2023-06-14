@@ -30,28 +30,30 @@ import React from "react"
 import ReactDOM  from "react-dom/client"
 import "./styles.css"
 
+
+const title ="Simply Lies: A Psychological Thriller"
+const img = "https://m.media-amazon.com/images/I/81JgqgEwbeL._AC_UL800_FMwebp_QL65_.jpg" 
+
 const BookList=()=>{
     return <section className="booklist">
+        <Book job="Developer" author={title}/>
         <Book/>
         <Book/>
-        <Book/>
-        <Book></Book>
+        <Book> </Book>
     </section>
 }
 
-const Book= ()=>{
+const Book= (props)=>{
+    console.log(props)
 return <section className="book">
-<BookImage/>
-<BookTitle/>
-<Author/>
+<img src={img} alt={title} />
+<h2>{title}</h2> <h3 style={{color:'blue',fontSize:'30px'}}>Book Author</h3>
+<h1>{props.job} {props.author}</h1> 
+
 </section>
 }
 
-const BookImage = ()=><img src="https://m.media-amazon.com/images/I/81JgqgEwbeL._AC_UL800_FMwebp_QL65_.jpg" alt="Simply Lies: A Psychological Thriller" />
-const BookTitle = ()=><h2>Simply Lies: A Psychological Thriller</h2>
-const Author = ()=>{
-    return <h3>Book Author</h3>
-}
+
 
 export default BookList
 const root = ReactDOM.createRoot(document.getElementById("root"))
